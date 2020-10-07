@@ -64,8 +64,8 @@ class Student
     FROM students
     WHERE students.name = ?
     SQL
-    DB[:conn].execute(sql, name)[1]
-    self.new_from_db(row)
+    returns = DB[:conn].execute(sql, name)[1]
+    self.new_from_db(returns)
     end
   end
   
